@@ -1,0 +1,14 @@
+[Unit]
+Description=RunDoc Backend
+After=network.target
+
+[Service]
+ExecStart=/opt/rundoc/venv/bin/python main.py
+WorkingDirectory=/opt/rundoc/backend
+EnvironmentFile=/opt/rundoc/.env
+Restart=always
+RestartSec=5
+User=sam
+
+[Install]
+WantedBy=multi-user.target
